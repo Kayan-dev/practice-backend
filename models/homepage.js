@@ -8,12 +8,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      homepage.belongsTo(models.user),
-        {
-          through: "user",
-          foreignKey: "userId",
-        },
-        homepage.hasMany(models.story);
+      homepage.belongsTo(models.user), homepage.hasMany(models.story);
     }
   }
   homepage.init(
